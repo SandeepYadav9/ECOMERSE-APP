@@ -1,0 +1,17 @@
+.container {
+  margin: 2px;
+} 
+.sortedList select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid gray;
+  background-color: white;
+  margin: 3px;
+  outline: none;
+}
+.sortedList, select .price{
+  font-size: large;
+  font-weight: bolder;
+}
+
+

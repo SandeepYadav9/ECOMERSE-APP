@@ -1,0 +1,96 @@
+/* .container {
+  width: 45rem;
+  max-width: 98%;
+  margin: 8em auto;
+  background-color: whitesmoke;
+  padding: 1rem;
+}
+
+.selectedItems {
+  display: flex;
+  justify-content: space-around;
+} */
+.cart {
+  margin: 6rem auto;
+  min-width: 35rem;
+  max-width: 90%;
+}
+.itmeContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  margin: 20px auto;
+  width: 40rem;
+  background-color: white;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.3);
+}
+.name,
+.price {
+  font-weight: bold;
+}
+.actionsCart {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+.actionsCart button {
+  margin: 10px;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  background-color: rgb(226, 90, 90);
+  border: none;
+  color: white;
+  font-size: larger;
+  cursor: pointer;
+}
+.actionsCart button,
+span {
+  font-weight: bold;
+}
+.actionsCart button:hover,
+button:active {
+  background-color: brown;
+}
+
+.actions {
+  padding: 1rem;
+}
+.actions button {
+  padding: 0.1rem 0.1rem;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: large;
+  cursor: pointer;
+}
+.actions button img {
+  width: 2rem;
+  height: 2rem;
+}
+.totalCount {
+  display: flex;
+  justify-content: space-around;
+}
+.actionbutton button{
+  margin-left: 1rem;
+}
+.totalCount button {
+  background-color: rgb(181, 14, 14);
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: large;
+  
+}
+.totalCount button:hover,
+button:active {
+  background-color: rgb(83, 15, 15);
+  color: whitesmoke;
+}
+/* .actions button:hover,
+button:active {
+  background-color: brown;
+} */

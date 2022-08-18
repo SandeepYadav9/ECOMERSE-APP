@@ -1,0 +1,27 @@
+.header {
+  background-color: brown;
+  color: white;
+  padding: 0.1rem;
+  text-align: right;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  font-size: large;
+}
+.header h3 {
+  margin-left: 2rem;
+}
+.cart {
+  margin-right: 2rem;
+}
+.budge,
+a {
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  text-decoration: none;
+}
