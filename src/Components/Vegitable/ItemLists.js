@@ -6,47 +6,16 @@ import data from "../../items";
 
 const ItemLists = ({
   items,
-  removeToCartHandler,
   addToCartHandler,
-  cartItems,
   onClickHandler,
   allItems,
-  count,
-  setCount,
   setAllItems,
 }) => {
-  let navigate = useNavigate();
+ 
 
-  // const onClickHandler = (category) => {
-  //   let filteredItems = [];
-  //   if (category === "all") {
-  //     addToCartHandler(items)
-
-  //   } else {
-  //     filteredItems = items.filter((element) => {
-  //       if (element.category === category) {
-  //         console.log(element)
-  //         return element;
-  //       }
-  //     });
-  //     addToCartHandler(filteredItems);
-  //   }
-  // };
-  // const onClickAddHandler = (item) => {
-  //   setCount(count + 1);
-  //   addToCartHandler(item);
-  // };
-  // const onClickDecriseHandler = (item) => {
-  //   if (count <= 0) {
-  //     alert("Somthing Went worng !!");
-  //     return;
-  //   }
-
-  //   setCount(count - 1);
-  //   removeToCartHandler(item);
-  // };
-  // let itemQuentety= setCount(count+1)
-  useEffect(() => {}, []);
+  // useEffect(() => {
+  //   setAllItems(items)
+  // }, []);
   return (
     <div>
       <div className={style.navContainer}>
@@ -102,6 +71,7 @@ const ItemLists = ({
           items={items}
           setAllItems={setAllItems}
           onClickHandler={onClickHandler}
+          addToCartHandler={addToCartHandler}
         />
       </div>
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import style from "./SortedList.module.css";
 
-const SortedList = ({ items, setAllItems, onClickHandler }) => {
+const SortedList = ({ items, setAllItems, onClickHandler ,addToCartHandler}) => {
   const [sortValue, setSortValue] = useState();
 
   let compare = {
@@ -23,10 +23,11 @@ const SortedList = ({ items, setAllItems, onClickHandler }) => {
     // setAllItems(items)
     onClickHandler(items);
     setAllItems(items);
+    
     // setSortedPrice(sortedPrice.price)
   };
   useEffect(() => {
-    onClickHandler("all");
+    
   }, []);
   return (
     <div className={style.container}>
