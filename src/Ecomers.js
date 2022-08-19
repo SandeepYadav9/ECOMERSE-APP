@@ -10,8 +10,9 @@ const Ecomers = (props) => {
   const [allItems, setAllItems] = useState(items);
 
   const addToCartHandler = (cartList) => {
+    // All Ready have item in Cart
     const cartListsEx = cartItems.find((list) => list.id === cartList.id);
-
+// if all ready have item
     if (cartListsEx) {
       setCartItems(
         cartItems.map((list) =>
@@ -59,7 +60,6 @@ const Ecomers = (props) => {
     }
   };
 
- 
   return (
     <div>
       <Header cartItems={cartItems} count={count} />

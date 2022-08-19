@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import style from "./ItemLists.module.css";
 import SortedList from "./SortedList";
-import { useNavigate } from "react-router-dom";
-import data from "../../items";
+
 
 const ItemLists = ({
   items,
@@ -10,12 +9,34 @@ const ItemLists = ({
   onClickHandler,
   allItems,
   setAllItems,
-}) => {
  
-
-  // useEffect(() => {
-  //   setAllItems(items)
-  // }, []);
+}) => { 
+  const [sortValue, setSortValue] = useState();
+  let compare = {
+    lowestpric: (a, b) => {
+      if (a.price < b.price) return -1;
+      if (a.price > b.price) return 1;
+      return 0;
+    }  
+  };
+  let compareDes = {    
+    higestprice: (a, b) => {
+      if (a.price > b.price) return -1;
+      if (a.price < b.price) return 1;
+      return 0;
+    }
+  };
+  const handleChange = (event) => {
+    console.log(event.target.value)
+    if (event.target.value === "lowestpric") {
+      items.sort(compare[event.target.value]);      
+    }else{      
+      items.sort(compareDes[event.target.value]);
+    }
+     setSortValue(event.target.value); 
+    setAllItems(items);
+    
+  };
   return (
     <div>
       <div className={style.navContainer}>
@@ -71,7 +92,8 @@ const ItemLists = ({
           items={items}
           setAllItems={setAllItems}
           onClickHandler={onClickHandler}
-          addToCartHandler={addToCartHandler}
+          handleChange={handleChange}
+          sortValue={sortValue}
         />
       </div>
 
@@ -102,7 +124,9 @@ const ItemLists = ({
                   </button>
                 </div> */}
                 <div className={style.addActions}>
-                  <button onClick={() => addToCartHandler(item)}>
+                  <button  onClick={() => {
+                      addToCartHandler(item);
+                    }}>
                     AddToCart
                   </button>
                 </div>

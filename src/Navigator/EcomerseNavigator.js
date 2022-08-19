@@ -28,7 +28,7 @@ const EcomerseNavigator = ({
             onClickHandler={onClickHandler}
             items={items}
             removeToCartHandler={removeToCartHandler}
-            
+            addToCartHandler={addToCartHandler}
           />
         }
       />

@@ -42,8 +42,9 @@ const CartList = ({
                   </button>
                 </div>
                 <div>
+                  <span>Sub Price: </span> <br />
                   <span className={style.price}>
-                    Sub Price: {item.price * item.quantity}
+                    {item.price * item.quantity}
                   </span>
                 </div>
                 <div className={style.actions}>
@@ -56,15 +57,23 @@ const CartList = ({
           );
         })}
         <div className={style.totalCount}>
-          <span>TotalAmount $ {totalPrice} </span>
-          {/* Default setup Total Amount  */}
           <div className={style.actionbutton}>
-            <button onClick={() => removeAllCartItem()}>Delete</button>
-            {/* Somthing Missing  */}
-            <button onClick={() => navigate("/", { replace: true })}>
-              Back To Home
-            </button>
+            <div>
+              {cartItems.length > 0 && <span>TotalAmount $ {totalPrice} </span>}
+            </div>
+            {cartItems.length > 0 || (
+              <button onClick={() => navigate("/", { replace: true })}>
+                Back To Home
+              </button>
+            )}
           </div>
+          <div>{cartItems.length === 0 && <div> </div>}</div>
+          <div>
+            {cartItems.length === 0 && (
+              <div className={style.emptyCart}>Cart Item is Empty !!</div>
+            )}
+          </div>
+          {/* <button onClick={() => removeAllCartItem()}>Delete</button> */}
         </div>
       </div>
     </div>

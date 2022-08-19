@@ -25,6 +25,10 @@
   background-color: white;
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.3);
 }
+.itmeContainer img {
+  height: 100%;
+  width: 200px;
+}
 .name,
 .price {
   font-weight: bold;
@@ -71,8 +75,17 @@ button:active {
 .totalCount {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
-.actionbutton button{
+.actionbutton{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  
+  margin-left: 10rem;
+
+}
+.actionbutton button {
   margin-left: 1rem;
 }
 .totalCount button {
@@ -83,7 +96,6 @@ button:active {
   cursor: pointer;
   color: white;
   font-size: large;
-  
 }
 .totalCount button:hover,
 button:active {
@@ -94,3 +106,7 @@ button:active {
 button:active {
   background-color: brown;
 } */
+.emptyCart{
+  font-weight: bold;
+  font-size: large;
+}

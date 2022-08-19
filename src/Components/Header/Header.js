@@ -4,7 +4,7 @@ import CartIcon from "../Cart/CartIcon";
 
 import style from "./Header.module.css";
 
-const Header = ({ cartItems, count }) => {
+const Header = ({ cartItems }) => {
   return (
     <header className={style.header}>
       <h3>Shopping Cart</h3>
