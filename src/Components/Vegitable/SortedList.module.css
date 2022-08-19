@@ -9,6 +9,14 @@
   margin: 3px;
   outline: none;
 }
+.sortedList select:hover, select:active{
+  border-color: brown;
+  border: 1px solid brown;
+}
+.sortedList select option{
+  background-color: white;
+  cursor: pointer;
+}
 .sortedList, select .price{
   font-size: large;
   font-weight: bolder;

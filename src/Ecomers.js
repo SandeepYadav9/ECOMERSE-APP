@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "./Components/Header/Header";
 import data from "./items";
 
 import EcomerseNavigator from "./Navigator/EcomerseNavigator";
 const Ecomers = (props) => {
   const { items } = data;
-  const [count, setCount] = useState(0);
+
   const [cartItems, setCartItems] = useState([]);
   const [allItems, setAllItems] = useState(items);
 
   const addToCartHandler = (cartList) => {
     // All Ready have item in Cart
     const cartListsEx = cartItems.find((list) => list.id === cartList.id);
-// if all ready have item
+    // if all ready have item
     if (cartListsEx) {
       setCartItems(
         cartItems.map((list) =>
@@ -25,11 +25,13 @@ const Ecomers = (props) => {
       setCartItems([...cartItems, { ...cartList, quantity: 1 }]);
     }
   };
+// Remove  one By one Cart Items
+
   const removeToCartHandler = (cartList) => {
     const cartListsEx = cartItems.find((list) => list.id === cartList.id);
 
     if (cartListsEx.quantity === 1) {
-      setCartItems(cartItems.filter((item) => item.id !== cartList.id));
+      setCartItems(cartItems.filter((item) => item.id !== cartList.id)); 
     } else {
       setCartItems(
         cartItems.map((item) =>
@@ -41,10 +43,13 @@ const Ecomers = (props) => {
     }
   };
 
+  //Delete all Lists 
   const removeAllCartItem = () => {
     setCartItems([]);
   };
 
+
+  // Filtered via Category 
   const onClickHandler = (category) => {
     // let filteredItems = [];
     if (category === "all") {
@@ -62,8 +67,7 @@ const Ecomers = (props) => {
 
   return (
     <div>
-      <Header cartItems={cartItems} count={count} />
-
+      <Header cartItems={cartItems} />
       <EcomerseNavigator
         removeAllCartItem={removeAllCartItem}
         removeToCartHandler={removeToCartHandler}
@@ -72,8 +76,6 @@ const Ecomers = (props) => {
         cartItems={cartItems}
         onClickHandler={onClickHandler}
         allItems={allItems}
-        count={count}
-        setCount={setCount}
         setAllItems={setAllItems}
       />
     </div>

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const CartIcon = () => {
   return (
     <NavLink to="/cart" className={style.cartIcon}>
-      <img className={style.icon} src={imageIcon} alt="" />
+      <img className={style.icon} src={imageIcon} alt="CartIcon" />
     </NavLink>
   );
 };

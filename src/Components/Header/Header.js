@@ -7,7 +7,9 @@ import style from "./Header.module.css";
 const Header = ({ cartItems }) => {
   return (
     <header className={style.header}>
-      <h3>Shopping Cart</h3>
+      <NavLink to="/" className={style.cart}>
+        <h3>Shopping Cart</h3>
+      </NavLink>
 
       <div>
         <NavLink to="/cart" className={style.cart}>

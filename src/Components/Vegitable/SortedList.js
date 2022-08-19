@@ -2,19 +2,13 @@ import React, { useEffect } from "react";
 
 import style from "./SortedList.module.css";
 
-const SortedList = ({ handleChange, sortValue}) => {
-   
-
-  
-  useEffect(() => {
-    
-  }, []);
+const SortedList = ({ handleChange, sortValue }) => {
+  useEffect(() => {}, []);
   return (
     <div className={style.container}>
       <div className={style.sortedList}>
-     
-        <select value={sortValue} onChange={(ev) => handleChange(ev)}>        
-          <option value="lowestpric" >
+        <select value={sortValue} onChange={(ev) => handleChange(ev)}>
+          <option value="lowestpric">
             SortedBy Price: <span className={style.price}>Low to High </span>{" "}
           </option>
           <option value="higestprice">

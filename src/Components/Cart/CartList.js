@@ -10,6 +10,7 @@ const CartList = ({
 }) => {
   let navigate = useNavigate();
 
+  // Reduce all price inito total Amount
   const totalPrice = cartItems.reduce(
     (price, item) => price + item.quantity * item.price,
     0
@@ -58,22 +59,30 @@ const CartList = ({
         })}
         <div className={style.totalCount}>
           <div className={style.actionbutton}>
-            <div>
-              {cartItems.length > 0 && <span>TotalAmount $ {totalPrice} </span>}
-            </div>
-            {cartItems.length > 0 || (
+            {cartItems.length > 0 && (
               <button onClick={() => navigate("/", { replace: true })}>
                 Back To Home
               </button>
             )}
           </div>
-          <div>{cartItems.length === 0 && <div> </div>}</div>
-          <div>
-            {cartItems.length === 0 && (
-              <div className={style.emptyCart}>Cart Item is Empty !!</div>
-            )}
+          <div className={style.totalAmount}>
+            {cartItems.length > 0 && <span>TotalAmount $ {totalPrice} </span>}
           </div>
+          <div>{cartItems.length === 0 && <div> </div>}</div>
+
           {/* <button onClick={() => removeAllCartItem()}>Delete</button> */}
+        </div>
+        {cartItems.length === 0 && (
+          <div className={style.emptyCart}>Cart Item is Empty !!</div>
+        )}
+      </div>
+      <div>
+        <div className={style.actionbutton}>
+          {cartItems.length === 0 && (
+            <button onClick={() => navigate("/", { replace: true })}>
+              Back To Home
+            </button>
+          )}
         </div>
       </div>
     </div>
